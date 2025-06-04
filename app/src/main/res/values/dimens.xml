@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margins -->
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_26">26dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="margin_48">48dp</dimen>
+    <dimen name="margin_100">100dp</dimen>
+    <dimen name="check_margin_top">-30dp</dimen>
+    <dimen name="check_margin_end">10dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+
+    <!-- Padding -->
+    <dimen name="padding_12">12dp</dimen>
+    <dimen name="padding_35">35dp</dimen>
+    <dimen name="padding_48">48dp</dimen>
+
+    <!--spacing-->
+    <dimen name="line_spacing">1dp</dimen>
+    <dimen name="line_spacing_4">4dp</dimen>
+
+    <!-- Sizes -->
+    <dimen name="icon_width">8dp</dimen>
+    <dimen name="icon_height">15dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="text_large">18sp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="country_label">82dp</dimen>
+    <dimen name="country_input">85dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="otp_box_width">42dp</dimen>
+    <dimen name="otp_box_height">60dp</dimen>
+    <dimen name="otp_box_stroke">1dp</dimen>
+</resources>

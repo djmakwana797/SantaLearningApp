@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">SantaApp</string>
+    <string name="back_button">back button</string>
+    <string name="sign_in_with_your_phone">sign in with your phone</string>
+    <string name="login_info">Enter your phone number so we can text you an authentication code.</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="_continue">CONTINUE</string>
+    <string name="_1">+1</string>
+    <string name="flag">Flag</string>
+    <string name="country">Country</string>
+    <string name="enter_authentication_code">Enter authentication code</string>
+    <string name="resend_code">Resend code</string>
+    <string name="you_re_verified">You’re verified!</string>
+    <string name="verification_success_message">Thanks for verifying your account. You’re ready to scan your tickets.</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="have_an_online_ticket">Have an online ticket?</string>
+    <string name="online_ticket_info">To add your Season Pass, please enter or scan your ticket’s QR Code or Barcode using the camera.</string>
+    <string name="add_my_ticket">add my ticket</string>
+    <string name="purchase_online">Purchase online</string>
+</resources>

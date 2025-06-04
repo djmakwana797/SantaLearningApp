@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fillViewport="true"
+    tools:context=".LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/icon_width"
+            android:layout_height="@dimen/icon_height"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_24"
+            android:contentDescription="@string/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/arrow" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/signInTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_12"
+            android:lineSpacingExtra="@dimen/line_spacing"
+            android:text="@string/sign_in_with_your_phone"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/countryCodeLabel"
+            android:layout_width="@dimen/country_label"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_12"
+            android:lineSpacingExtra="1dp"
+            android:text="@string/country"
+            android:textColor="@color/label"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signInSub" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/phoneLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_12"
+            android:lineSpacingExtra="@dimen/line_spacing"
+            android:text="@string/phone_number"
+            android:textColor="@color/label"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/countryCodeLabel"
+            app:layout_constraintTop_toBottomOf="@+id/signInSub" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/countryCodeLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/country_input"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_32"
+            app:boxBackgroundColor="@color/inputBg"
+            app:boxCornerRadiusBottomEnd="@dimen/margin_12"
+            app:boxCornerRadiusBottomStart="@dimen/margin_12"
+            app:boxCornerRadiusTopEnd="@dimen/margin_12"
+            app:boxCornerRadiusTopStart="@dimen/margin_12"
+            app:boxStrokeColor="@color/grey"
+            app:boxStrokeWidth="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signInSub"
+            app:startIconDrawable="@drawable/flag"
+            app:cursorColor="@color/grey"
+            app:startIconTint="@null">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/countryCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:text="@string/_1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneNumberLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_24"
+            app:boxBackgroundColor="@color/inputBg"
+            app:boxCornerRadiusBottomEnd="@dimen/margin_12"
+            app:boxCornerRadiusBottomStart="@dimen/margin_12"
+            app:boxCornerRadiusTopEnd="@dimen/margin_12"
+            app:boxCornerRadiusTopStart="@dimen/margin_12"
+            app:boxStrokeColor="@color/grey"
+            app:boxStrokeWidth="0dp"
+            app:cursorColor="@color/grey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
+            app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phoneNumberInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/signInSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/line_spacing_4"
+            android:paddingHorizontal="@dimen/margin_48"
+            android:paddingBottom="@dimen/padding_35"
+            android:text="@string/login_info"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signInTitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnContinue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_26"
+            android:layout_marginTop="100dp"
+            android:height="@dimen/button_height"
+            android:backgroundTint="@color/primary"
+            android:paddingVertical="@dimen/margin_12"
+            android:text="@string/_continue"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/margin_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/countryCodeLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
