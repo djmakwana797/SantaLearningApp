@@ -14,6 +14,7 @@
     <dimen name="check_margin_end">10dp</dimen>
     <dimen name="margin_10">10dp</dimen>
     <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_18">18dp</dimen>
 
     <!-- Padding -->
     <dimen name="padding_12">12dp</dimen>
@@ -30,6 +31,7 @@
     <dimen name="input_height">56dp</dimen>
     <dimen name="text_large">18sp</dimen>
     <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_16">16sp</dimen>
     <dimen name="country_label">82dp</dimen>
     <dimen name="country_input">85dp</dimen>
     <dimen name="button_height">56dp</dimen>

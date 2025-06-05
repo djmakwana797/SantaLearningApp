@@ -23,4 +23,17 @@
     <string name="close">close</string>
     <string name="scan_ticket">SCAN TICKET</string>
     <string name="scan_qr_code_detail">Fit the barcode or QR in the marked area</string>
+    <string name="is_this_your_ticket">IS THIS YOUR TICKET?</string>
+    <string name="save_ticket_info">Please review your information. Photo, phone number, and email are required.</string>
+    <string name="season_pass">Season Pass</string>
+    <string name="pass_id">#234234234</string>
+    <string name="add_image_icon">add Image Icon</string>
+    <string name="required">Required</string>
+    <string name="star">*</string>
+    <string name="user_icon">user Icon</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="purchased_on_9_23_2022_by">Purchased on 9/23/2022 by</string>
+    <string name="purchase_detail">John Billingname ∙ xxxx-xxxx-xxxx-1234</string>
+    <string name="save_ticket_details">SAVE TICKET DETAILS</string>
 </resources>
