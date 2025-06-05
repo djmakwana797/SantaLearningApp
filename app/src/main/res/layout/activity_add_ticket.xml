@@ -65,7 +65,7 @@
             app:srcCompat="@drawable/group_237" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/addMyTicket"
+            android:id="@+id/purchaseOnline"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_26"
@@ -86,7 +86,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnContinue"
+            android:id="@+id/addMyTicket"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/margin_26"
@@ -100,7 +100,7 @@
             android:textStyle="bold"
             app:cornerRadius="@dimen/margin_12"
             android:layout_marginBottom="@dimen/margin_5"
-            app:layout_constraintBottom_toTopOf="@id/addMyTicket"
+            app:layout_constraintBottom_toTopOf="@id/purchaseOnline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

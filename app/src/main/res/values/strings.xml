@@ -19,4 +19,8 @@
     <string name="online_ticket_info">To add your Season Pass, please enter or scan your ticket’s QR Code or Barcode using the camera.</string>
     <string name="add_my_ticket">add my ticket</string>
     <string name="purchase_online">Purchase online</string>
+    <string name="enter_code_instead">Enter Code Instead</string>
+    <string name="close">close</string>
+    <string name="scan_ticket">SCAN TICKET</string>
+    <string name="scan_qr_code_detail">Fit the barcode or QR in the marked area</string>
 </resources>

@@ -19,7 +19,10 @@
         android:theme="@style/Theme.SantaApp"
         tools:targetApi="31">
         <activity
-            android:name=".ScanTicketActicity"
+            android:name=".SaveTicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScanTicketActivity"
             android:exported="false" />
         <activity
             android:name=".AddTicketActivity"
