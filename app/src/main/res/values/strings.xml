@@ -36,4 +36,6 @@
     <string name="purchased_on_9_23_2022_by">Purchased on 9/23/2022 by</string>
     <string name="purchase_detail">John Billingname ∙ xxxx-xxxx-xxxx-1234</string>
     <string name="save_ticket_details">SAVE TICKET DETAILS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
