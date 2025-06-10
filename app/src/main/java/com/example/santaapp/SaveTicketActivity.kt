@@ -1,6 +1,9 @@
 package com.example.santaapp
 
+import android.content.ContentValues
+import android.content.Intent
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.Spannable
@@ -8,9 +11,12 @@ import android.text.SpannableString
 import android.text.TextWatcher
 import android.text.style.StyleSpan
 import android.util.Patterns
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
@@ -26,6 +32,7 @@ class SaveTicketActivity : AppCompatActivity() {
     private lateinit var emailInput: TextInputEditText
     private lateinit var saveTicketBtn: MaterialButton
     private lateinit var takeAPhoto: ConstraintLayout
+    private lateinit var userImage: ImageView
 
     private lateinit var errorImgName: ImageView
     private lateinit var errorImgEmail: ImageView
@@ -34,6 +41,8 @@ class SaveTicketActivity : AppCompatActivity() {
     private lateinit var textInputLayout: TextInputLayout
     private lateinit var textInputLayout1: TextInputLayout
     private lateinit var textInputLayout2: TextInputLayout
+
+    private lateinit var captureImageLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +56,18 @@ class SaveTicketActivity : AppCompatActivity() {
         initializeVal()
     }
     private fun initializeVal () {
+        captureImageLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val uriString = result.data?.getStringExtra("capturedImageUri")
+                val uri = uriString?.let { Uri.parse(it) }
+
+                uri?.let {
+                    userImage.visibility = View.VISIBLE
+                    takeAPhoto.visibility = View.INVISIBLE
+                    userImage.setImageURI(it)
+                }
+            }
+        }
         saveTicketInfo = findViewById(R.id.saveTicketInfo)
         fullNameInput = findViewById(R.id.fullNameInput)
         phoneNumberInput = findViewById(R.id.phoneNumberInput)
@@ -59,6 +80,7 @@ class SaveTicketActivity : AppCompatActivity() {
         textInputLayout = findViewById(R.id.textInputLayout)
         textInputLayout1 = findViewById(R.id.textInputLayout1)
         textInputLayout2 = findViewById(R.id.textInputLayout2)
+        userImage = findViewById(R.id.userImage)
 
         val boldPart = "Please review your information."
         val normalPart = " Photo, phone number, and email are required."
@@ -66,15 +88,6 @@ class SaveTicketActivity : AppCompatActivity() {
         val spannable = SpannableString(boldPart + normalPart)
         spannable.setSpan(StyleSpan(Typeface.BOLD), 0, boldPart.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         saveTicketInfo.text = spannable
-
-        val fragment = VerifyPhotoFragment()
-        takeAPhoto.setOnClickListener {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .addToBackStack(null)
-                .commit()
-
-        }
 
         textInputLayout.setEndIconOnClickListener {
             fullNameInput.isEnabled = true
@@ -93,7 +106,11 @@ class SaveTicketActivity : AppCompatActivity() {
             emailInput.setSelection(emailInput.text?.length ?: 0)
         }
 
+        takeAPhoto.setOnClickListener {
+            val intent = Intent(this, VerifyPhotoActivity::class.java)
+            captureImageLauncher.launch(intent)
 
+        }
         val inputFields = listOf(fullNameInput, phoneNumberInput, emailInput)
         inputFields.forEach { editText ->
             editText.addTextChangedListener(object : TextWatcher {
@@ -112,18 +129,18 @@ class SaveTicketActivity : AppCompatActivity() {
         val phone = phoneNumberInput.text.toString().trim()
         val email = emailInput.text.toString().trim()
 
-        // Validation checks
         val isValidName = name.isNotEmpty()
         val isValidPhone = phone.length == 10 && phone.all { it.isDigit() }
+
         val isValidEmail = Patterns.EMAIL_ADDRESS.matcher(email).matches()
 
-        // Show/hide icons based on validation
         errorImgName.setImageResource(if (isValidName) R.drawable.tick else R.drawable.error)
         errorImgPhone.setImageResource(if (isValidPhone) R.drawable.tick else R.drawable.error)
         errorImgEmail.setImageResource(if (isValidEmail) R.drawable.tick else R.drawable.error)
 
-        // Enable button only if all inputs are valid
         saveTicketBtn.isEnabled = isValidName && isValidPhone && isValidEmail
+        if(isValidName && isValidPhone && isValidEmail) {
+            saveTicketBtn.text = "Save ticket"
+        }
     }
-
 }

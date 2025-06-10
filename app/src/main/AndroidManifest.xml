@@ -19,6 +19,12 @@
         android:theme="@style/Theme.SantaApp"
         tools:targetApi="31">
         <activity
+            android:name=".TicketSavedSuccessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".VerifyPhotoActivity"
+            android:exported="false" />
+        <activity
             android:name=".SaveTicketActivity"
             android:exported="false" />
         <activity
