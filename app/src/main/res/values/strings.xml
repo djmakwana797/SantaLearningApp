@@ -44,4 +44,6 @@
     <string name="instruction_1">1. You must bring your ticket to the event to enter.</string>
     <string name="instruction_2">2. Have a photo ID on you that matches the name on the ticket.</string>
     <string name="instruction_3">3. Your photo must be recognizable as you.</string>
+    <string name="santa_s_enchanted_forest">Santa’s Enchanted Forest</string>
+    <string name="santa_s_nenchanted_nforest">SANTA’S\nENCHANTED\nFOREST</string>
 </resources>

@@ -106,6 +106,11 @@ class SaveTicketActivity : AppCompatActivity() {
             emailInput.setSelection(emailInput.text?.length ?: 0)
         }
 
+        saveTicketBtn.setOnClickListener {
+            val intent = Intent(this, TicketSavedSuccessActivity::class.java)
+            startActivity(intent)
+        }
+
         takeAPhoto.setOnClickListener {
             val intent = Intent(this, VerifyPhotoActivity::class.java)
             captureImageLauncher.launch(intent)
