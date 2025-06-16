@@ -72,13 +72,64 @@
                 app:layout_constraintStart_toEndOf="@+id/strokeTextView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_passes_added"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="58dp"
+            android:textAllCaps="true"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/subTitle"
+            android:layout_width="244dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/margin_5"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:lineHeight="@dimen/margin_24"
+            android:text="@string/tap_add_a_pass_to_scan_your_online_ticket"
+            />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/empty"
+            app:layout_constraintTop_toBottomOf="@+id/subTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingHorizontal="@dimen/margin_32"
+            />
 
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_a_pass"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/primary"
+            app:cornerRadius="@dimen/margin_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_26"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/customDrawer"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:orientation="vertical">
@@ -89,7 +140,6 @@
             android:layout_height="120dp"
             android:background="@drawable/gradient_background"
             android:padding="16dp"
-            android:layout_marginEnd="@dimen/margin_32"
             >
 
             <ImageView
@@ -119,7 +169,6 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:src="@drawable/group_36"
-                android:layout_marginEnd="-30dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true" />
         </RelativeLayout>
@@ -132,7 +181,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:background="@color/white"
-            android:layout_marginEnd="@dimen/margin_32"
             android:paddingTop="8dp">
 
             <!-- Each item -->
