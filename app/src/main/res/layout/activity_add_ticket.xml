@@ -1,107 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:fillViewport="true"
-    tools:context=".LoginActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+    <data>
+
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        tools:context=".ui.login.LoginActivity">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_height"
-            android:layout_marginStart="@dimen/margin_24"
-            android:layout_marginTop="@dimen/margin_24"
-            android:contentDescription="@string/back_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/arrow" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/signInTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_12"
-            android:lineSpacingExtra="@dimen/line_spacing"
-            android:text="@string/have_an_online_ticket"
-            android:textAllCaps="true"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/text_large"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_24"
+                android:contentDescription="@string/back_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/arrow" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/signInSub"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_10"
-            android:gravity="center"
-            android:lineSpacingExtra="@dimen/line_spacing_4"
-            android:paddingHorizontal="@dimen/margin_48"
-            android:paddingBottom="@dimen/padding_35"
-            android:text="@string/online_ticket_info"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_large"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signInTitle" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/signInTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12"
+                android:lineSpacingExtra="@dimen/line_spacing"
+                android:text="@string/have_an_online_ticket"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/scanTicket"
-            android:layout_width="350dp"
-            android:layout_height="520dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/group_237" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/signInSub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/line_spacing_4"
+                android:paddingHorizontal="@dimen/margin_48"
+                android:paddingBottom="@dimen/padding_35"
+                android:text="@string/online_ticket_info"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signInTitle" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/purchaseOnline"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_26"
-            android:height="@dimen/button_height"
-            android:backgroundTint="@color/black"
-            android:paddingVertical="@dimen/margin_12"
-            android:text="@string/purchase_online"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/text_large"
-            android:textStyle="bold"
-            app:cornerRadius="@dimen/margin_12"
-            app:iconGravity="end"
-            app:icon="@drawable/vector"
-            android:layout_marginBottom="@dimen/margin_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/scanTicket"
+                android:layout_width="350dp"
+                android:layout_height="520dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/group_237" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/addMyTicket"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_26"
-            android:height="@dimen/button_height"
-            android:backgroundTint="@color/primary"
-            android:paddingVertical="@dimen/margin_12"
-            android:text="@string/add_my_ticket"
-            android:textAllCaps="true"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/text_large"
-            android:textStyle="bold"
-            app:cornerRadius="@dimen/margin_12"
-            android:layout_marginBottom="@dimen/margin_5"
-            app:layout_constraintBottom_toTopOf="@id/purchaseOnline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/purchaseOnline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_26"
+                android:height="@dimen/button_height"
+                android:backgroundTint="@color/black"
+                android:paddingVertical="@dimen/margin_12"
+                android:text="@string/purchase_online"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/margin_12"
+                app:iconGravity="end"
+                app:icon="@drawable/vector"
+                android:layout_marginBottom="@dimen/margin_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addMyTicket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_26"
+                android:height="@dimen/button_height"
+                android:backgroundTint="@color/primary"
+                android:paddingVertical="@dimen/margin_12"
+                android:text="@string/add_my_ticket"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/margin_12"
+                android:layout_marginBottom="@dimen/margin_5"
+                app:layout_constraintBottom_toTopOf="@id/purchaseOnline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

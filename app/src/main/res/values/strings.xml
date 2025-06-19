@@ -53,4 +53,7 @@
     <string name="sign_out">Sign Out</string>
     <string name="no_passes_added">No passes added.</string>
     <string name="tap_add_a_pass_to_scan_your_online_ticket">Tap Add a Pass to scan your online ticket.</string>
+    <string name="build_1_232_121">Build 1.232.121</string>
+    <string name="magic_money">Magic Money</string>
+    <string name="close_icon">closeIcon</string>
 </resources>

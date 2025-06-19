@@ -1,285 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white"
-    android:fillViewport="true"
-    tools:context=".LoginActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.santaapp.ui.auth.AuthViewModel"/>
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        tools:context=".ui.login.LoginActivity">
 
-        <ImageView
-            android:id="@+id/backBtn"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_height"
-            android:layout_marginStart="@dimen/margin_24"
-            android:layout_marginTop="@dimen/margin_24"
-            android:contentDescription="@string/back_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/arrow" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/signInTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_12"
-            android:lineSpacingExtra="@dimen/line_spacing"
-            android:text="@string/enter_authentication_code"
-            android:textAllCaps="true"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/text_large"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/backBtn" />
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/verificationText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_10"
-            android:gravity="center"
-            android:lineSpacingExtra="@dimen/line_spacing_4"
-            android:paddingHorizontal="@dimen/margin_48"
-            android:paddingBottom="@dimen/padding_35"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_large"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signInTitle" />
-
-        <LinearLayout
-            android:id="@+id/otpContainer"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:divider="@drawable/divider"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:showDividers="middle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/verificationText">
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/otpLayout1"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/otp_box_width"
-                android:layout_height="@dimen/otp_box_height"
-                app:boxBackgroundColor="@color/inputBg"
-                app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
-                app:boxStrokeColor="@color/grey"
-                app:boxStrokeWidth="@dimen/otp_box_stroke"
-                app:cursorColor="@color/grey"
+            <ImageView
+                android:id="@+id/backBtn"
+                android:layout_width="@dimen/icon_width"
+                android:layout_height="@dimen/icon_height"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_24"
+                android:contentDescription="@string/back_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/arrow" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/signInTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12"
+                android:lineSpacingExtra="@dimen/line_spacing"
+                android:text="@string/enter_authentication_code"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
-                app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/backBtn" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/otpInput1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:maxLength="1" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/otpLayout2"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/otp_box_width"
-                android:layout_height="@dimen/otp_box_height"
-                app:boxBackgroundColor="@color/inputBg"
-                app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
-                app:boxStrokeColor="@color/grey"
-                app:boxStrokeWidth="@dimen/otp_box_stroke"
-                app:cursorColor="@color/grey"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/verificationText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/line_spacing_4"
+                android:paddingHorizontal="@dimen/margin_48"
+                android:paddingBottom="@dimen/padding_35"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_large"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
-                app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signInTitle"
+                android:text="@{viewModel.phoneNumber}"
+                />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/otpInput2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:maxLength="1" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/otpLayout3"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/otp_box_width"
-                android:layout_height="@dimen/otp_box_height"
-                app:boxBackgroundColor="@color/inputBg"
-                app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
-                app:boxStrokeColor="@color/grey"
-                app:boxStrokeWidth="@dimen/otp_box_stroke"
-                app:cursorColor="@color/grey"
+            <LinearLayout
+                android:id="@+id/otpContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:divider="@drawable/divider"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:showDividers="middle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
-                app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/verificationText">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/otpInput3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:maxLength="1" />
-            </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otpLayout1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/otp_box_width"
+                    android:layout_height="@dimen/otp_box_height"
+                    app:boxBackgroundColor="@color/inputBg"
+                    app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
+                    app:boxStrokeColor="@color/grey"
+                    app:boxStrokeWidth="@dimen/otp_box_stroke"
+                    app:cursorColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
+                    app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/otpLayout4"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/otp_box_width"
-                android:layout_height="@dimen/otp_box_height"
-                app:boxBackgroundColor="@color/inputBg"
-                app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
-                app:boxStrokeColor="@color/grey"
-                app:boxStrokeWidth="@dimen/otp_box_stroke"
-                app:cursorColor="@color/grey"
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpInput1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:text='@={viewModel.otpDigits[0]}'
+                        android:maxLength="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otpLayout2"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/otp_box_width"
+                    android:layout_height="@dimen/otp_box_height"
+                    app:boxBackgroundColor="@color/inputBg"
+                    app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
+                    app:boxStrokeColor="@color/grey"
+                    app:boxStrokeWidth="@dimen/otp_box_stroke"
+                    app:cursorColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
+                    app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpInput2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:text='@={viewModel.otpDigits[1]}'
+                        android:maxLength="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otpLayout3"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/otp_box_width"
+                    android:layout_height="@dimen/otp_box_height"
+                    app:boxBackgroundColor="@color/inputBg"
+                    app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
+                    app:boxStrokeColor="@color/grey"
+                    app:boxStrokeWidth="@dimen/otp_box_stroke"
+                    app:cursorColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
+                    app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpInput3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:text='@={viewModel.otpDigits[2]}'
+                        android:maxLength="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otpLayout4"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/otp_box_width"
+                    android:layout_height="@dimen/otp_box_height"
+                    app:boxBackgroundColor="@color/inputBg"
+                    app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
+                    app:boxStrokeColor="@color/grey"
+                    app:boxStrokeWidth="@dimen/otp_box_stroke"
+                    app:cursorColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
+                    app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpInput4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:text='@={viewModel.otpDigits[3]}'
+                        android:maxLength="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otpLayout5"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/otp_box_width"
+                    android:layout_height="@dimen/otp_box_height"
+                    app:boxBackgroundColor="@color/inputBg"
+                    app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
+                    app:boxStrokeColor="@color/grey"
+                    app:boxStrokeWidth="@dimen/otp_box_stroke"
+                    app:cursorColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
+                    app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpInput5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:text='@={viewModel.otpDigits[4]}'
+                        android:maxLength="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otpLayout6"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/otp_box_width"
+                    android:layout_height="@dimen/otp_box_height"
+                    app:boxBackgroundColor="@color/inputBg"
+                    app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
+                    app:boxStrokeColor="@color/grey"
+                    app:boxStrokeWidth="@dimen/otp_box_stroke"
+                    app:cursorColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
+                    app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpInput6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:text='@={viewModel.otpDigits[5]}'
+                        android:maxLength="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otpLayout7"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="@dimen/otp_box_width"
+                    android:layout_height="@dimen/otp_box_height"
+                    app:boxBackgroundColor="@color/inputBg"
+                    app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
+                    app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
+                    app:boxStrokeColor="@color/grey"
+                    app:boxStrokeWidth="@dimen/otp_box_stroke"
+                    app:cursorColor="@color/grey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
+                    app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otpInput7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone"
+                        android:text='@={viewModel.otpDigits[6]}'
+                        android:maxLength="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnContinue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_26"
+                android:layout_marginTop="60dp"
+                android:height="@dimen/button_height"
+                android:backgroundTint="@color/primary"
+                android:paddingVertical="@dimen/margin_12"
+                android:text="@string/_continue"
+                android:textAllCaps="true"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/margin_12"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
-                app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/otpContainer" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/otpInput4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:maxLength="1" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/otpLayout5"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/otp_box_width"
-                android:layout_height="@dimen/otp_box_height"
-                app:boxBackgroundColor="@color/inputBg"
-                app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
-                app:boxStrokeColor="@color/grey"
-                app:boxStrokeWidth="@dimen/otp_box_stroke"
-                app:cursorColor="@color/grey"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnResend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_26"
+                android:layout_marginTop="@dimen/margin_8"
+                android:height="@dimen/button_height"
+                android:backgroundTint="@color/black"
+                android:paddingVertical="@dimen/margin_12"
+                android:text="@string/resend_code"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
+                app:cornerRadius="@dimen/margin_12"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
-                app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnContinue" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/otpInput5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:maxLength="1" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/otpLayout6"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/otp_box_width"
-                android:layout_height="@dimen/otp_box_height"
-                app:boxBackgroundColor="@color/inputBg"
-                app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
-                app:boxStrokeColor="@color/grey"
-                app:boxStrokeWidth="@dimen/otp_box_stroke"
-                app:cursorColor="@color/grey"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
-                app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/otpInput6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:maxLength="1" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/otpLayout7"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/otp_box_width"
-                android:layout_height="@dimen/otp_box_height"
-                app:boxBackgroundColor="@color/inputBg"
-                app:boxCornerRadiusBottomEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusBottomStart="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopEnd="@dimen/line_spacing_4"
-                app:boxCornerRadiusTopStart="@dimen/line_spacing_4"
-                app:boxStrokeColor="@color/grey"
-                app:boxStrokeWidth="@dimen/otp_box_stroke"
-                app:cursorColor="@color/grey"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/countryCodeLayout"
-                app:layout_constraintTop_toTopOf="@id/countryCodeLayout">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/otpInput7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:maxLength="1" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnContinue"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_26"
-            android:layout_marginTop="60dp"
-            android:height="@dimen/button_height"
-            android:backgroundTint="@color/primary"
-            android:paddingVertical="@dimen/margin_12"
-            android:text="@string/_continue"
-            android:textAllCaps="true"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/text_large"
-            android:textStyle="bold"
-            app:cornerRadius="@dimen/margin_12"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/otpContainer" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnResend"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_26"
-            android:layout_marginTop="@dimen/margin_8"
-            android:height="@dimen/button_height"
-            android:backgroundTint="@color/black"
-            android:paddingVertical="@dimen/margin_12"
-            android:text="@string/resend_code"
-            android:textAllCaps="true"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/text_large"
-            android:textStyle="bold"
-            app:cornerRadius="@dimen/margin_12"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnContinue" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+    </ScrollView>
+</layout>

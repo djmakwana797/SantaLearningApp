@@ -1,10 +1,9 @@
-package com.example.santaapp
+package com.example.santaapp.ui.saveticket
 
 import android.Manifest
 import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -12,8 +11,6 @@ import android.util.Log
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
@@ -25,16 +22,18 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.databinding.DataBindingUtil
+import com.example.santaapp.R
+import com.example.santaapp.databinding.ActivityVerifyPhotoBinding
 
 class VerifyPhotoActivity : AppCompatActivity() {
-    private lateinit var cameraPreview: PreviewView
     private var imageCapture: ImageCapture? = null
-    private lateinit var capturePhotoBtn: ImageButton
+    private lateinit var binding: ActivityVerifyPhotoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_verify_photo)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_verify_photo)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -43,14 +42,12 @@ class VerifyPhotoActivity : AppCompatActivity() {
         initialize()
     }
     private fun initialize () {
-        cameraPreview = findViewById(R.id.previewView)
-        capturePhotoBtn = findViewById(R.id.capturePhotoBtn)
         if (allPermissionsGranted()) {
             startCamera()
         } else {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
-        capturePhotoBtn.setOnClickListener {
+        binding.capturePhotoBtn.setOnClickListener {
          capturePhoto()
         }
     }
@@ -60,7 +57,7 @@ class VerifyPhotoActivity : AppCompatActivity() {
             val cameraProvider = cameraProviderFuture.get()
 
             val preview = Preview.Builder().build().also {
-                it.setSurfaceProvider(cameraPreview.surfaceProvider)
+                it.setSurfaceProvider(binding.previewView.surfaceProvider)
             }
 
             imageCapture = ImageCapture.Builder()

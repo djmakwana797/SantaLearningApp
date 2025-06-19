@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Margins -->
+    <dimen name="margin_6">6dp</dimen>
     <dimen name="margin_8">8dp</dimen>
     <dimen name="margin_12">12dp</dimen>
     <dimen name="margin_14">14dp</dimen>
@@ -16,6 +17,7 @@
     <dimen name="margin_10">10dp</dimen>
     <dimen name="margin_5">5dp</dimen>
     <dimen name="margin_18">18dp</dimen>
+    <dimen name="title_margin">58dp</dimen>
 
     <!-- Padding -->
     <dimen name="padding_12">12dp</dimen>
@@ -33,10 +35,12 @@
     <dimen name="text_large">18sp</dimen>
     <dimen name="text_medium">14sp</dimen>
     <dimen name="text_16">16sp</dimen>
+    <dimen name="text_12">12sp</dimen>
     <dimen name="country_label">82dp</dimen>
     <dimen name="country_input">85dp</dimen>
     <dimen name="button_height">56dp</dimen>
     <dimen name="otp_box_width">42dp</dimen>
     <dimen name="otp_box_height">60dp</dimen>
     <dimen name="otp_box_stroke">1dp</dimen>
+    <dimen name="add_button_size">30.7dp</dimen>
 </resources>

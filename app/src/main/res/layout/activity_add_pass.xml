@@ -1,227 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawerLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddPassActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Main Content -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/main"
+    <data>
+
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient_background">
+        tools:context=".ui.addpass.AddPassActivity">
 
+        <!-- Main Content -->
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/header"
+            android:id="@+id/main"
             android:layout_width="match_parent"
-            android:layout_height="83dp"
-            android:background="@drawable/gradient_background"
-            android:elevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_background">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageSanta"
-                android:layout_width="52dp"
-                android:layout_height="47.66dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginBottom="16.84dp"
-                android:src="@drawable/santa"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="83dp"
+                android:background="@drawable/gradient_background"
+                android:elevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/menu"
-                android:layout_width="22dp"
-                android:layout_height="23.16dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginBottom="18.89dp"
-                android:src="@drawable/ic_menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageSanta"
+                    android:layout_width="52dp"
+                    android:layout_height="47.66dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="16.84dp"
+                    android:src="@drawable/santa"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/menu"
+                    android:layout_width="22dp"
+                    android:layout_height="23.16dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginBottom="18.89dp"
+                    android:src="@drawable/ic_menu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/strokeTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16.5dp"
+                    android:layout_marginEnd="39.5dp"
+                    android:layout_marginBottom="@dimen/margin_20"
+                    android:text="@string/santa_s_enchanted_forest"
+                    android:textAllCaps="true"
+                    android:textColor="@color/primary"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageSanta"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/add_button_size"
+                    android:layout_height="@dimen/add_button_size"
+                    android:layout_marginEnd="@dimen/margin_6"
+                    android:layout_marginBottom="16.3dp"
+                    android:src="@drawable/button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/strokeTextView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/strokeTextView"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="16.5dp"
-                android:layout_marginEnd="39.5dp"
-                android:layout_marginBottom="@dimen/margin_20"
-                android:text="@string/santa_s_enchanted_forest"
-                android:textAllCaps="true"
-                android:textColor="@color/primary"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_passes_added"
+                app:layout_constraintTop_toBottomOf="@+id/header"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageSanta"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_marginTop="@dimen/title_margin"
+                android:textAllCaps="true" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/subTitle"
+                android:layout_width="244dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/margin_5"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:lineHeight="@dimen/margin_24"
+                android:text="@string/tap_add_a_pass_to_scan_your_online_ticket" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="30.7dp"
-                android:layout_height="30.7dp"
-                android:layout_marginEnd="6dp"
-                android:layout_marginBottom="16.3dp"
-                android:src="@drawable/button"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/empty"
+                app:layout_constraintTop_toBottomOf="@+id/subTitle"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/strokeTextView" />
+                android:paddingHorizontal="@dimen/margin_32" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_a_pass"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/primary"
+                app:cornerRadius="@dimen/margin_10"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginHorizontal="@dimen/margin_24"
+                android:layout_marginBottom="@dimen/margin_26" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/no_passes_added"
-            app:layout_constraintTop_toBottomOf="@+id/header"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_large"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="58dp"
-            android:textAllCaps="true"
-            />
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/subTitle"
-            android:layout_width="244dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textColor="@color/white"
-            android:layout_marginTop="@dimen/margin_5"
-            android:textSize="18sp"
-            android:gravity="center"
-            android:lineHeight="@dimen/margin_24"
-            android:text="@string/tap_add_a_pass_to_scan_your_online_ticket"
-            />
-        <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/empty"
-            app:layout_constraintTop_toBottomOf="@+id/subTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:paddingHorizontal="@dimen/margin_32"
-            />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/add_a_pass"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/primary"
-            app:cornerRadius="@dimen/margin_10"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginHorizontal="@dimen/margin_24"
-            android:layout_marginBottom="@dimen/margin_26"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <LinearLayout
-        android:id="@+id/customDrawer"
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:orientation="vertical">
-
-        <!-- Header -->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:background="@drawable/gradient_background"
-            android:padding="16dp"
-            >
-
-            <ImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/santa"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:scaleType="centerCrop"
-                android:padding="2dp" />
-
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/santa_s_nenchanted_nforest"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:layout_toEndOf="@id/imgProfile"
-                android:layout_marginStart="12dp"
-                android:layout_centerVertical="true" />
-
-            <ImageView
-                android:id="@+id/btnCloseDrawer"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:src="@drawable/group_36"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true" />
-        </RelativeLayout>
-
-        <!-- Menu Items -->
         <LinearLayout
-            android:id="@+id/drawerMenu"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@color/white"
-            android:paddingTop="8dp">
+            android:id="@+id/customDrawer"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:orientation="vertical">
 
-            <!-- Each item -->
-            <include layout="@layout/drawer_item" android:id="@+id/nav_passes"/>
-            <include layout="@layout/drawer_item" android:id="@+id/nav_add_pass"/>
-            <include layout="@layout/drawer_item" android:id="@+id/nav_rules"/>
-            <include layout="@layout/drawer_item" android:id="@+id/nav_help"/>
-
-            <View
+            <!-- Header -->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginVertical="12dp"
-                android:background="#CCCCCC"
+                android:layout_height="120dp"
+                android:background="@drawable/gradient_background"
+                android:padding="16dp">
 
-                 />
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/santa"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerCrop"
+                    android:padding="2dp" />
 
-            <include layout="@layout/drawer_item" android:id="@+id/nav_signout"/>
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/santa_s_nenchanted_nforest"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_toEndOf="@id/imgProfile"
+                    android:layout_marginStart="12dp"
+                    android:layout_centerVertical="true" />
+
+                <ImageView
+                    android:id="@+id/btnCloseDrawer"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="@string/close_icon"
+                    android:src="@drawable/group_36"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <!-- Menu Items -->
+            <LinearLayout
+                android:id="@+id/drawerMenu"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:paddingTop="8dp">
+
+                <!-- Each item -->
+                <include
+                    layout="@layout/drawer_item"
+                    android:id="@+id/nav_passes" />
+
+                <include
+                    layout="@layout/drawer_item"
+                    android:id="@+id/nav_add_pass" />
+
+                <include
+                    layout="@layout/drawer_item"
+                    android:id="@+id/nav_rules" />
+
+                <include
+                    layout="@layout/drawer_item"
+                    android:id="@+id/nav_help" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="12dp"
+                    android:background="#CCCCCC"
+
+                    />
+
+                <include
+                    layout="@layout/drawer_item"
+                    android:id="@+id/nav_signout" />
+            </LinearLayout>
+
+            <!-- Footer -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/magic_money"
+                    android:textColor="#888888"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_medium" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/build_1_232_121"
+                    android:textColor="#AAAAAA"
+                    android:textSize="@dimen/text_12" />
+            </LinearLayout>
         </LinearLayout>
 
-        <!-- Footer -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Magic Money"
-                android:textColor="#888888"
-                android:textStyle="bold"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Build 1.232.121"
-                android:textColor="#AAAAAA"
-                android:textSize="12sp" />
-        </LinearLayout>
-    </LinearLayout>
-
-</androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
