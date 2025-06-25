@@ -11,7 +11,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient_background"
+        android:background="@drawable/bg_screen_gradient"
         tools:context=".ui.saveticket.SaveTicketActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,14 +19,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <FrameLayout
-                android:id="@+id/fragment_container"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imageView"
+                android:id="@+id/ivBack"
                 android:layout_width="@dimen/icon_width"
                 android:layout_height="@dimen/icon_height"
                 android:layout_marginStart="@dimen/margin_24"
@@ -35,10 +29,10 @@
                 android:tint="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/arrow" />
+                app:srcCompat="@drawable/ic_back" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/saveTicketTitle"
+                android:id="@+id/tvSaveTicketTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_24"
@@ -52,7 +46,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/saveTicketInfo"
+                android:id="@+id/tvSaveTicketInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_5"
@@ -62,23 +56,21 @@
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_medium"
-                app:layout_constraintTop_toBottomOf="@id/saveTicketTitle"
+                app:layout_constraintTop_toBottomOf="@id/tvSaveTicketTitle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Card Section -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/mainPassCard"
+                android:id="@+id/clMainPassCard"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/margin_24"
                 android:layout_marginTop="@dimen/margin_24"
-                android:background="@drawable/round_corner"
-                app:layout_constraintTop_toBottomOf="@id/saveTicketInfo"
+                android:background="@drawable/bg_yellow_round_corner"
+                app:layout_constraintTop_toBottomOf="@id/tvSaveTicketInfo"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-                <!-- Top Title -->
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -107,28 +99,28 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/subPassCard"
+                    android:id="@+id/clSubPassCard"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_10"
                     android:layout_marginTop="50dp"
                     android:background="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@+id/mainPassCard"
-                    app:layout_constraintEnd_toEndOf="@+id/mainPassCard"
-                    app:layout_constraintStart_toStartOf="@+id/mainPassCard"
+                    app:layout_constraintBottom_toBottomOf="@+id/clMainPassCard"
+                    app:layout_constraintEnd_toEndOf="@+id/clMainPassCard"
+                    app:layout_constraintStart_toStartOf="@+id/clMainPassCard"
                     android:paddingBottom="@dimen/margin_16"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/imageInput"
+                        android:id="@+id/clImageInput"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_marginTop="16dp"
-                        android:background="@drawable/add_image_background"
-                        app:layout_constraintEnd_toEndOf="@+id/subPassCard"
+                        android:background="@drawable/bg_image_input"
+                        app:layout_constraintEnd_toEndOf="@+id/clSubPassCard"
                         android:visibility="visible"
-                        app:layout_constraintStart_toStartOf="@+id/subPassCard"
-                        app:layout_constraintTop_toTopOf="@+id/subPassCard">
+                        app:layout_constraintStart_toStartOf="@+id/clSubPassCard"
+                        app:layout_constraintTop_toTopOf="@+id/clSubPassCard">
 
                         <ImageView
                             android:id="@+id/addImageIcon"
@@ -138,9 +130,9 @@
                             android:layout_marginTop="40dp"
                             android:contentDescription="@string/add_image_icon"
                             android:src="@drawable/ic_camera"
-                            app:layout_constraintEnd_toEndOf="@+id/imageInput"
-                            app:layout_constraintStart_toStartOf="@+id/imageInput"
-                            app:layout_constraintTop_toTopOf="@+id/imageInput" />
+                            app:layout_constraintEnd_toEndOf="@+id/clImageInput"
+                            app:layout_constraintStart_toStartOf="@+id/clImageInput"
+                            app:layout_constraintTop_toTopOf="@+id/clImageInput" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/star"
@@ -152,7 +144,7 @@
                             android:textFontWeight="400"
                             android:textSize="24sp"
                             app:layout_constraintEnd_toStartOf="@+id/required"
-                            app:layout_constraintStart_toStartOf="@+id/imageInput"
+                            app:layout_constraintStart_toStartOf="@+id/clImageInput"
                             app:layout_constraintTop_toBottomOf="@+id/addImageIcon" />
 
                         <com.google.android.material.textview.MaterialTextView
@@ -164,7 +156,7 @@
                             android:text="@string/required"
                             android:textColor="@color/white"
                             android:textSize="12sp"
-                            app:layout_constraintEnd_toEndOf="@+id/imageInput"
+                            app:layout_constraintEnd_toEndOf="@+id/clImageInput"
                             app:layout_constraintStart_toEndOf="@+id/star"
                             app:layout_constraintTop_toBottomOf="@+id/addImageIcon" />
 
@@ -174,10 +166,10 @@
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_marginTop="16dp"
-                        app:layout_constraintEnd_toEndOf="@+id/subPassCard"
+                        app:layout_constraintEnd_toEndOf="@+id/clSubPassCard"
                         android:visibility="invisible"
-                        app:layout_constraintStart_toStartOf="@+id/subPassCard"
-                        app:layout_constraintTop_toTopOf="@+id/subPassCard"
+                        app:layout_constraintStart_toStartOf="@+id/clSubPassCard"
+                        app:layout_constraintTop_toTopOf="@+id/clSubPassCard"
                         android:id="@+id/userImage"
                         app:strokeWidth="@dimen/line_spacing_4"
                         app:strokeColor="@color/primary"
@@ -191,16 +183,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/margin_10"
                         android:layout_marginTop="@dimen/margin_24"
-                        android:background="@drawable/input_box"
+                        android:background="@drawable/bg_input_box_round_corner"
                         app:boxBackgroundMode="none"
                         app:boxStrokeColor="@color/primary"
-                        app:endIconDrawable="@drawable/edit_icon"
+                        app:endIconDrawable="@drawable/ic_edit"
                         app:endIconMode="custom"
                         app:hintEnabled="false"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imageInput"
-                        app:startIconDrawable="@drawable/__icon__user_">
+                        app:layout_constraintTop_toBottomOf="@id/clImageInput"
+                        app:startIconDrawable="@drawable/ic_user_outline">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/fullNameInput"
@@ -218,7 +210,7 @@
                         android:id="@+id/errorImgName"
                         android:layout_width="@dimen/margin_16"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/tick"
+                        android:src="@drawable/ic_tick_1"
                         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
                         app:layout_constraintTop_toTopOf="@+id/textInputLayout"
                         app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
@@ -231,16 +223,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/margin_10"
                         android:layout_marginTop="@dimen/margin_10"
-                        android:background="@drawable/input_box"
+                        android:background="@drawable/bg_input_box_round_corner"
                         app:boxBackgroundMode="none"
                         app:boxStrokeColor="@color/primary"
-                        app:endIconDrawable="@drawable/edit_icon"
+                        app:endIconDrawable="@drawable/ic_edit"
                         app:endIconMode="custom"
                         app:hintEnabled="false"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-                        app:startIconDrawable="@drawable/__icon__phone_">
+                        app:startIconDrawable="@drawable/ic_phone_outline">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/phoneNumberInput"
@@ -259,7 +251,7 @@
                         android:id="@+id/errorImgPhone"
                         android:layout_width="@dimen/margin_16"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/tick"
+                        android:src="@drawable/ic_tick_1"
                         app:layout_constraintStart_toStartOf="@+id/textInputLayout1"
                         app:layout_constraintTop_toTopOf="@+id/textInputLayout1"
                         app:layout_constraintBottom_toBottomOf="@+id/textInputLayout1"
@@ -271,17 +263,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="@dimen/margin_10"
-                        android:background="@drawable/input_box"
+                        android:background="@drawable/bg_input_box_round_corner"
                         app:boxBackgroundMode="none"
                         app:boxStrokeColor="@color/primary"
-                        app:endIconDrawable="@drawable/edit_icon"
+                        app:endIconDrawable="@drawable/ic_edit"
                         app:endIconMode="custom"
                         app:hintEnabled="false"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/textInputLayout1"
                         android:layout_marginTop="@dimen/margin_10"
-                        app:startIconDrawable="@drawable/__icon__mail_">
+                        app:startIconDrawable="@drawable/ic_mail_outline">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/emailInput"
@@ -299,7 +291,7 @@
                         android:id="@+id/errorImgEmail"
                         android:layout_width="@dimen/margin_16"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/error"
+                        android:src="@drawable/ic_star"
                         app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
                         app:layout_constraintTop_toTopOf="@+id/textInputLayout2"
                         app:layout_constraintBottom_toBottomOf="@+id/textInputLayout2"
@@ -310,8 +302,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/purchaseDetail"
                         app:layout_constraintTop_toBottomOf="@id/textInputLayout2"
-                        app:layout_constraintStart_toStartOf="@id/subPassCard"
-                        app:layout_constraintEnd_toEndOf="@id/subPassCard"
+                        app:layout_constraintStart_toStartOf="@id/clSubPassCard"
+                        app:layout_constraintEnd_toEndOf="@id/clSubPassCard"
                         android:text="@string/purchased_on_9_23_2022_by"
                         android:textColor="#86858F"
                         android:textSize="12sp"
@@ -323,8 +315,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/purchaseDetail1"
                         app:layout_constraintTop_toBottomOf="@id/purchaseDetail"
-                        app:layout_constraintStart_toStartOf="@id/subPassCard"
-                        app:layout_constraintEnd_toEndOf="@id/subPassCard"
+                        app:layout_constraintStart_toStartOf="@id/clSubPassCard"
+                        app:layout_constraintEnd_toEndOf="@id/clSubPassCard"
                         android:text="@string/purchase_detail"
                         android:textColor="#86858F"
                         android:textSize="14sp"
@@ -345,7 +337,7 @@
                 android:textSize="22sp"
                 android:textAllCaps="true"
                 app:cornerRadius="@dimen/margin_10"
-                app:layout_constraintTop_toBottomOf="@id/mainPassCard"
+                app:layout_constraintTop_toBottomOf="@id/clMainPassCard"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 

@@ -39,25 +39,27 @@ class VerifyPhotoActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        initialize()
+        initializeView()
     }
-    private fun initialize () {
+
+    private fun initializeView () {
         if (allPermissionsGranted()) {
             startCamera()
         } else {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
-        binding.capturePhotoBtn.setOnClickListener {
+        binding.btnCapturePhoto.setOnClickListener {
          capturePhoto()
         }
     }
+
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
         cameraProviderFuture.addListener({
             val cameraProvider = cameraProviderFuture.get()
 
             val preview = Preview.Builder().build().also {
-                it.setSurfaceProvider(binding.previewView.surfaceProvider)
+                it.setSurfaceProvider(binding.pvVerifyPhoto.surfaceProvider)
             }
 
             imageCapture = ImageCapture.Builder()
@@ -122,9 +124,11 @@ class VerifyPhotoActivity : AppCompatActivity() {
             }
         )
     }
+
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
+
     companion object {
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)

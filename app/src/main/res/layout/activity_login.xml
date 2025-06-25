@@ -22,7 +22,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/ivBack"
                 android:layout_width="@dimen/icon_width"
                 android:layout_height="@dimen/icon_height"
                 android:layout_marginStart="@dimen/margin_24"
@@ -30,10 +30,10 @@
                 android:contentDescription="@string/back_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/arrow" />
+                app:srcCompat="@drawable/ic_back" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/signInTitle"
+                android:id="@+id/tvSignInTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_12"
@@ -45,10 +45,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/ivBack" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/countryCodeLabel"
+                android:id="@+id/tvCountryCodeLabel"
                 android:layout_width="@dimen/country_label"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_24"
@@ -62,7 +62,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/signInSub" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/phoneLabel"
+                android:id="@+id/tvPhoneLabel"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_20"
@@ -73,7 +73,7 @@
                 android:textSize="@dimen/text_medium"
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/countryCodeLabel"
+                app:layout_constraintStart_toEndOf="@id/tvCountryCodeLabel"
                 app:layout_constraintTop_toBottomOf="@+id/signInSub" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -92,7 +92,7 @@
                 app:boxStrokeWidth="0dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/signInSub"
-                app:startIconDrawable="@drawable/flag"
+                app:startIconDrawable="@drawable/ic_flag"
                 app:cursorColor="@color/grey"
                 app:startIconTint="@null">
 
@@ -128,7 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:maxLength="10"
-                    android:text="@{loginViewModel.phoneNumber}"
+                    android:text="@={loginViewModel.phoneNumber}"
                     android:inputType="phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -146,7 +146,7 @@
                 android:textSize="@dimen/text_large"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/signInTitle" />
+                app:layout_constraintTop_toBottomOf="@+id/tvSignInTitle" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnContinue"

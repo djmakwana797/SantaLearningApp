@@ -14,6 +14,7 @@ import com.example.santaapp.util.NavigationUtils
 
 class AddTicketActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddTicketBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,11 +24,15 @@ class AddTicketActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.addMyTicket.setOnClickListener {
+        setBtnListeners()
+    }
+
+    private fun setBtnListeners() {
+        binding.btnAddMyTicket.setOnClickListener {
             val intent = Intent(this, ScanTicketActivity::class.java)
             startActivity(intent)
         }
-        binding.imageView.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             NavigationUtils.goBack(this)
         }
     }

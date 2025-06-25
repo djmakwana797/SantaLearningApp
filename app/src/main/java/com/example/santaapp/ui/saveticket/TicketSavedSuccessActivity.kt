@@ -15,6 +15,7 @@ import com.example.santaapp.util.NavigationUtils
 
 class TicketSavedSuccessActivity : AppCompatActivity() {
     private lateinit var binding: ActivityTicketSavedSuccessBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -24,11 +25,15 @@ class TicketSavedSuccessActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        setBtnListeners()
+    }
+
+    private fun setBtnListeners () {
         binding.btnContinue.setOnClickListener {
             val intent = Intent(this, AddPassActivity::class.java)
             startActivity(intent)
         }
-        binding.imageView.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             NavigationUtils.goBack(this)
         }
     }

@@ -18,13 +18,13 @@
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/gradient_background">
+            android:background="@drawable/bg_screen_gradient">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/header"
                 android:layout_width="match_parent"
                 android:layout_height="83dp"
-                android:background="@drawable/gradient_background"
+                android:background="@drawable/bg_screen_gradient"
                 android:elevation="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/menu"
+                    android:id="@+id/ivMenu"
                     android:layout_width="22dp"
                     android:layout_height="23.16dp"
                     android:layout_marginStart="15dp"
@@ -72,7 +72,7 @@
                     android:layout_height="@dimen/add_button_size"
                     android:layout_marginEnd="@dimen/margin_6"
                     android:layout_marginBottom="16.3dp"
-                    android:src="@drawable/button"
+                    android:src="@drawable/ic_add"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/strokeTextView" />
@@ -110,7 +110,7 @@
             <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/empty"
+                android:src="@drawable/img_empty_ticket_view"
                 app:layout_constraintTop_toBottomOf="@+id/subTitle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -144,7 +144,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
-                android:background="@drawable/gradient_background"
+                android:background="@drawable/bg_screen_gradient"
                 android:padding="16dp">
 
                 <ImageView
@@ -174,7 +174,7 @@
                     android:layout_width="32dp"
                     android:layout_height="32dp"
                     android:contentDescription="@string/close_icon"
-                    android:src="@drawable/group_36"
+                    android:src="@drawable/ic_back_round"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
             </RelativeLayout>

@@ -22,6 +22,7 @@ import com.example.santaapp.util.NavigationUtils
 
 class ScanTicketActivity : AppCompatActivity() {
     private lateinit var binding: ActivityScanTicketActicityBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -31,12 +32,16 @@ class ScanTicketActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        checkCameraPermission()
+        setClickListener()
+    }
+
+    private fun checkCameraPermission () {
         if (allPermissionsGranted()) {
             startCamera()
         } else {
             ActivityCompat.requestPermissions(this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS)
         }
-        setClickListener()
     }
 
     private fun setClickListener () {
@@ -44,7 +49,7 @@ class ScanTicketActivity : AppCompatActivity() {
             val intent = Intent(this, SaveTicketActivity::class.java)
             startActivity(intent)
         }
-        binding.closeIcon.setOnClickListener{
+        binding.ivClose.setOnClickListener{
             NavigationUtils.goBack(this)
         }
     }
@@ -54,7 +59,7 @@ class ScanTicketActivity : AppCompatActivity() {
         cameraProviderFuture.addListener({
             val cameraProvider = cameraProviderFuture.get()
             val preview = Preview.Builder().build().also {
-                it.setSurfaceProvider(binding.previewView.surfaceProvider)
+                it.setSurfaceProvider(binding.pvScanTicket.surfaceProvider)
             }
 
             val cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA

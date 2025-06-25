@@ -22,7 +22,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/backBtn"
+                android:id="@+id/ivBack"
                 android:layout_width="@dimen/icon_width"
                 android:layout_height="@dimen/icon_height"
                 android:layout_marginStart="@dimen/margin_24"
@@ -30,10 +30,10 @@
                 android:contentDescription="@string/back_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/arrow" />
+                app:srcCompat="@drawable/ic_back" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/signInTitle"
+                android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_12"
@@ -45,10 +45,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/backBtn" />
+                app:layout_constraintTop_toBottomOf="@+id/ivBack" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/verificationText"
+                android:id="@+id/tvVerificationText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_10"
@@ -60,7 +60,7 @@
                 android:textSize="@dimen/text_large"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/signInTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
                 android:text="@{viewModel.phoneNumber}"
                 />
 
@@ -69,13 +69,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
-                android:divider="@drawable/divider"
+                android:divider="@drawable/divider_otp_inputs"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:showDividers="middle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/verificationText">
+                app:layout_constraintTop_toBottomOf="@id/tvVerificationText">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/otpLayout1"

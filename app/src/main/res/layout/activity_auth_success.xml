@@ -30,7 +30,7 @@
                 android:contentDescription="@string/back_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/arrow" />
+                app:srcCompat="@drawable/ic_back" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/signInTitle"
@@ -70,7 +70,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/signInSub"
-                app:srcCompat="@drawable/windows" />
+                app:srcCompat="@drawable/img_login_success" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/tick"
@@ -80,7 +80,7 @@
                 app:layout_constraintEnd_toEndOf="@id/windowImage"
                 android:layout_marginTop="@dimen/check_margin_top"
                 android:layout_marginEnd="@dimen/check_margin_end"
-                app:srcCompat="@drawable/group" />
+                app:srcCompat="@drawable/ic_tick" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnContinue"

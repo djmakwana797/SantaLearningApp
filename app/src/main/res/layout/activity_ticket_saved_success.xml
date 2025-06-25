@@ -15,7 +15,7 @@
         tools:context=".ui.saveticket.TicketSavedSuccessActivity">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ivBack"
             android:layout_width="@dimen/icon_width"
             android:layout_height="@dimen/icon_height"
             android:layout_marginStart="@dimen/margin_24"
@@ -23,10 +23,10 @@
             android:contentDescription="@string/back_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/arrow" />
+            app:srcCompat="@drawable/ic_back" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/pleaseNote"
+            android:id="@+id/tvPleaseNote"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_12"
@@ -38,20 +38,20 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/ivBack" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageTravel"
+            android:id="@+id/ivTravel"
             android:layout_width="185dp"
             android:layout_height="190dp"
-            android:src="@drawable/charco_travel_international"
-            app:layout_constraintTop_toBottomOf="@+id/pleaseNote"
+            android:src="@drawable/img_travel"
+            app:layout_constraintTop_toBottomOf="@+id/tvPleaseNote"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="50dp" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/instruction1"
+            android:id="@+id/tvInstruction1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_10"
@@ -63,10 +63,10 @@
             android:textSize="@dimen/text_large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageTravel" />
+            app:layout_constraintTop_toBottomOf="@+id/ivTravel" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/instruction2"
+            android:id="@+id/tvInstruction2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_12"
@@ -78,10 +78,10 @@
             android:textSize="@dimen/text_large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instruction1" />
+            app:layout_constraintTop_toBottomOf="@+id/tvInstruction1" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/instruction3"
+            android:id="@+id/tvInstruction3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_12"
@@ -93,7 +93,7 @@
             android:textSize="@dimen/text_large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/instruction2" />
+            app:layout_constraintTop_toBottomOf="@+id/tvInstruction2" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnContinue"

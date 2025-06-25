@@ -15,6 +15,7 @@ import com.example.santaapp.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModel: LoginViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,12 +27,14 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        initializeVal()
+        initializeView()
     }
-    private fun initializeVal () {
+
+    private fun initializeView () {
         binding.countryCode.setText(R.string._1)
         binding.btnContinue.setOnClickListener {
             val intent = Intent(this, AuthenticateCodeActivity::class.java)
+            intent.putExtra("phone", binding.phoneNumberInput.text.toString())
             startActivity(intent)
         }
     }

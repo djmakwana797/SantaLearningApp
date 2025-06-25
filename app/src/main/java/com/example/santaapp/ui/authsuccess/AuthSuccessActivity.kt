@@ -14,6 +14,7 @@ import com.example.santaapp.util.NavigationUtils
 
 class AuthSuccessActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthSuccessBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,9 +24,10 @@ class AuthSuccessActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        initializeVal()
+        initializeBtnListeners()
     }
-    private fun initializeVal () {
+
+    private fun initializeBtnListeners () {
         binding.btnContinue.setOnClickListener {
             val intent = Intent(this, AddTicketActivity::class.java)
             startActivity(intent)

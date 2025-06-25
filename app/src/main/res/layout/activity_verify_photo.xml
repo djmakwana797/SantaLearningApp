@@ -14,12 +14,12 @@
         tools:context=".ui.saveticket.VerifyPhotoActivity">
 
         <androidx.camera.view.PreviewView
-            android:id="@+id/previewView"
+            android:id="@+id/pvVerifyPhoto"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/clHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
@@ -29,18 +29,18 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/ivClose"
                 android:layout_width="@dimen/margin_24"
                 android:layout_height="@dimen/margin_24"
                 android:layout_marginStart="@dimen/margin_24"
                 android:contentDescription="@string/close"
-                android:src="@drawable/icon_24px"
+                android:src="@drawable/ic_close"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/scanText"
+                android:id="@+id/tvVerifyPhotoTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -58,7 +58,7 @@
                 android:layout_width="30dp"
                 android:layout_height="@dimen/margin_24"
                 android:layout_marginEnd="@dimen/margin_24"
-                android:src="@drawable/page_1"
+                android:src="@drawable/ic_camera_rotate_outline"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -69,8 +69,8 @@
             android:layout_width="0dp"
             android:text="@string/take_photo_info"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-            android:background="@drawable/round_corner"
+            app:layout_constraintTop_toBottomOf="@+id/clHeader"
+            android:background="@drawable/bg_yellow_round_corner"
             android:padding="@dimen/margin_12"
             android:layout_marginTop="@dimen/margin_20"
             android:layout_marginEnd="@dimen/margin_5"
@@ -82,7 +82,7 @@
         <View
             android:layout_width="300dp"
             android:layout_height="305dp"
-            android:background="@drawable/grid__1_"
+            android:background="@drawable/img_scan_overlay"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -90,10 +90,10 @@
             android:layout_gravity="center_horizontal" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/capturePhotoBtn"
+            android:id="@+id/btnCapturePhoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ellipse_5"
+            android:src="@drawable/img_click_photo"
             android:layout_gravity="center"
             android:layout_marginBottom="@dimen/margin_48"
             android:background="@null"

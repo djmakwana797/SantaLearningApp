@@ -34,9 +34,10 @@ class SaveTicketActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        initializeVal()
+        initializeView()
     }
-    private fun initializeVal () {
+
+    private fun initializeView () {
         captureImageLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
                 val uriString = result.data?.getStringExtra("capturedImageUri")
@@ -44,7 +45,7 @@ class SaveTicketActivity : AppCompatActivity() {
 
                 uri?.let {
                     binding.userImage.visibility = View.VISIBLE
-                    binding.imageInput.visibility = View.INVISIBLE
+                    binding.clImageInput.visibility = View.INVISIBLE
                     binding.userImage.setImageURI(it)
                 }
             }
@@ -55,7 +56,7 @@ class SaveTicketActivity : AppCompatActivity() {
 
         val spannable = SpannableString(boldPart + normalPart)
         spannable.setSpan(StyleSpan(Typeface.BOLD), 0, boldPart.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        binding.saveTicketInfo.text = spannable
+        binding.tvSaveTicketInfo.text = spannable
 
         binding.textInputLayout.setEndIconOnClickListener {
             binding.fullNameInput.isEnabled = true
@@ -79,7 +80,7 @@ class SaveTicketActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.imageInput.setOnClickListener {
+        binding.clImageInput.setOnClickListener {
             val intent = Intent(this, VerifyPhotoActivity::class.java)
             captureImageLauncher.launch(intent)
 
@@ -107,13 +108,13 @@ class SaveTicketActivity : AppCompatActivity() {
 
         val isValidEmail = Patterns.EMAIL_ADDRESS.matcher(email).matches()
 
-        binding.errorImgName.setImageResource(if (isValidName) R.drawable.tick else R.drawable.error)
-        binding.errorImgPhone.setImageResource(if (isValidPhone) R.drawable.tick else R.drawable.error)
-        binding.errorImgEmail.setImageResource(if (isValidEmail) R.drawable.tick else R.drawable.error)
+        binding.errorImgName.setImageResource(if (isValidName) R.drawable.ic_tick_1 else R.drawable.ic_star)
+        binding.errorImgPhone.setImageResource(if (isValidPhone) R.drawable.ic_tick_1 else R.drawable.ic_star)
+        binding.errorImgEmail.setImageResource(if (isValidEmail) R.drawable.ic_tick_1 else R.drawable.ic_star)
 
         binding.saveTicketBtn.isEnabled = isValidName && isValidPhone && isValidEmail
         if(isValidName && isValidPhone && isValidEmail) {
-            binding.saveTicketBtn.text = "Save ticket"
+            binding.saveTicketBtn.text = getString(R.string.save_ticket)
         }
     }
 }

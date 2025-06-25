@@ -18,6 +18,7 @@ import com.example.santaapp.util.NavigationUtils
 class AuthenticateCodeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAuthenticateCodeBinding
     private lateinit var viewModel : AuthViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,9 +30,17 @@ class AuthenticateCodeActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        setMobileNumber()
         setupOtpInputs()
         setOnClickListeners()
     }
+
+    private fun setMobileNumber () {
+        val phone = intent.getStringExtra("phone") ?: ""
+        viewModel.setPhoneNumber(phone)
+    }
+
     private fun setupOtpInputs() {
         val otpInputs = listOf(
             binding.otpInput1,
@@ -60,7 +69,7 @@ class AuthenticateCodeActivity : AppCompatActivity() {
     }
 
     private fun setOnClickListeners() {
-        binding.backBtn.setOnClickListener {
+        binding.ivBack.setOnClickListener {
             NavigationUtils.goBack(this)
         }
         binding.btnContinue.setOnClickListener{
